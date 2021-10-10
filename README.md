@@ -1,0 +1,2 @@
+# pseudospectral-bounds
+This repository contains code that calculates the bounds for transient growth of dynamical systems from Trefethen and Embree's 2005 text "Spectra and Pseudospectra." Dynamical system defined in Reimer et al 2019 and Nuebert and Caswell 1997 are used in example scripts. This repository depends on the MatLab package eigtool, available at https://www.cs.ox.ac.uk/pseudospectra/eigtool/
