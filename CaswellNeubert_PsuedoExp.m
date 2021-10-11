@@ -28,6 +28,9 @@ eigtool(A_CN,opts)
  %4. Name all three variables appropriately for following code and ease of
  %    switching between matrices
 
+%Alternatively one can load the saved .mat file
+load('pseudoACN.mat')
+ 
 %Calculate the pseudospectral lower bound of growth
 Gam_CN = pe_contour(x_CN,y_CN,Z_CN,10.^[-1.75 -1.5 -1.25 -1 -0.75 -0.5 -0.25], 0);
 "lower bound of growth for the matrix A_CN"
@@ -98,7 +101,8 @@ title("1984")
 eigtool(A_cn2_1986,opts)
 title("1986")
 
-%% After exporting the data from eigtool
+%% After exporting the data from eigtool or load in the saved workspace variables
+load('pseudocn2.mat');
 
 %numerical abscissa
 num_abscissa_cn2_1984 = max(eig(HA_cn2_1984))

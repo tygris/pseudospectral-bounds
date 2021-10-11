@@ -1,14 +1,26 @@
-%function to find minimum growth of exp(t*A)
+%Function to find minimum growth of exp(t*A)
 %the goal is to use this function and compare it to the calculated
 %pseudospectral lower bound
+%
+%narg = expm_growth_range(A, time_step, iterations, nperturbs)
+%input, A, complex matrix describing the continuous time dynamical system
+%          (DS)
+%input, time_step, double, the resolution of the time solve of the DS
+%input, iterations, integer, the number of times to perform the time step
+%          time_step*iterations = time the DS is solved until
+%input, nperturbs, integer, the number of random perturbations of 2-norm
+%          one to calculate the trajectory of.
+%output, figure with plots of all the calculated solutions to the DS for
+% random initial conditions (aka after a random perturbation tot he system)
+%
+%The function was designed to answer the following:
+%I noticed that different perturbations have different amounts of transient 
+% growth, so is the pseudospectral lower bound actually a tight bound?
+%
+%Natalie Wellen
+%10/10/21
 
-%I noticed that different perturbations have different growth, so the
-%question is is the pseudospectral lower bound actually a tight bound?
-%After all transient growth will have a range of possibilities for
-%different perturbations, and so far I have only been testing uniform
-%perturbations
-
-function narg = expm_growth_range(A, time_step,iterations, nperturbs)
+function narg = expm_growth_range(A, time_step, iterations, nperturbs)
     t = 0:time_step:time_step*iterations;
     figure
     
@@ -38,6 +50,7 @@ function narg = expm_growth_range(A, time_step,iterations, nperturbs)
     xlabel("time")
     ylabel("perturbation 2-norm")
 end
+
 
 
 

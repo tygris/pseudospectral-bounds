@@ -1,7 +1,15 @@
-%How to get a pseudo epsilon curve as a list of [x; y] coordinates
-
-%This is currently based on exporting data from eigtool, and I can keep
-%looking for a way to so that through matlab commands
+%Script to test methods for extracting specific contours of pseudospectral
+%boundaries.
+%
+%How to get a pseudo epsilon curve as a list of [x; y] coordinates.
+%
+%The data must be exported from eigtool. If the matrix is being analyzed
+%more than once i.e. accross multiple days/sessions, then it is useful to use the
+%save() and load() functions built-in to MatLab to avoid extracting the
+%data every time.
+%
+%Natalie Wellen
+%10/10/21
 
 A = [-1 5; 0 -2]; % this is the matrix that x, y, Z are measured from
 %1. call 'eigtool(A)'
@@ -10,6 +18,7 @@ A = [-1 5; 0 -2]; % this is the matrix that x, y, Z are measured from
 %4. choose variable names for the x-grid, y-grid, and the matrix which
 %   contains ||(z-A)^(-1)|| for z  = x + iy
 %   default is x, y, Z, this is what I used.
+load('pseudoA_contours.mat');
 
 %Say the contour curve we are interested is 10^-2 to get the x and y values
 figure;

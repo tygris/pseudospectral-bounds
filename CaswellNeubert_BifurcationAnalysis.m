@@ -1,10 +1,11 @@
+%This script analyzes the non-linear example from Neubert and Caswell 1997
+%
+%y_1' = y_1*(1-(y_1/k)) - (y_2*y_1)/(1+y_1)
+%y_2' = a*((y_2*y_1)/(1+y_1) - b*y_2))
+%
 %Natalie Wellen
 %5/5/21
 
-%This script analyzes the non-linear example from Neubert and Caswell 1997
-
-%y_1' = y_1*(1-(y_1/k)) - (y_2*y_1)/(1+y_1)
-%y_2' = a*((y_2*y_1)/(1+y_1) - b*y_2))
 
 %% Bifurcation Analysis varying beta
 alpha = 0.05;

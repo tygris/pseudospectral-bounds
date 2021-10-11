@@ -1,13 +1,24 @@
 %This function takes as input exported data from eigtool and the desired
-%eps^(-1) value of the contours
-%Note that even if e_vec only has one level of epsilon, it needs to be
-%listed twice due to the contour function
-%Finally, show_plot is an optional argument that can be used to turn of the
-%plotting feature
-%The output C is a cell array, where each odd numbered cell gives the
+%eps^(-1) value of the contours to extract the pseudospectral boundaries of
+%a matrix
+%
+%[C] = pe_contour(x,y,Z, eps_vec, show_plt)
+%input, x, double vector, the x-coordinates for the pseudospectral grid
+%input, y, double vector, the y-coordinates for the pseudospectral grid
+%input, Z, complex matrix, the pseudospectral value at z = x + 1i*y
+%input, eps_vec, double vector, list of contours to extract from the
+%      pseudospectral grid 
+%  Note that even if eps_vec only has one level of epsilon, it needs to be
+%      listed twice due to the contour function
+%input, show_plot, optional binary argument, 0 = no plots as output and 
+%      1 = show both plots. No input means that only the contours are
+%      plotted
+%output, C, a cell array where each odd numbered cell gives the
 %epsilon value and the number of elements, and each even numbered cell
-%contains the list of imaginary numbers defining the contour
-
+%contains the vector of imaginary numbers defining the contour
+%
+%Natalie Wellen
+%10/10/21
 function C = pe_contour(x,y,Z, eps_vec, show_plt)
 figure
 cc = contour(x,y,Z,eps_vec); %get the contour map for all of the levels in eps_vec

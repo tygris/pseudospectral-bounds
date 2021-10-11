@@ -1,8 +1,14 @@
-%Gam is a list of contours for the pseudospectra; output of pe_contour
-%d_or_c, input is 'd' for discrete time system or 'c' for continuous time
-%      system
-%vals, output is a table of the 1/eps value and the lower bound of the
-% max part of the dynamical system implied by that epsilon value
+%Function, calculates the lower bound (14.6) from Trefethen and Embree for 
+% different values of epsilon 
+%
+%[vals] = pseudo_lb(Gam, d_or_c)
+%input, Gam, is a cell aray of epsilon values and contours for the pseudospectra; output of pe_contour
+%input, d_or_c, is 'd' for discrete time DS or 'c' for continuous time DS
+%output, vals,  is a table of the 1/eps value and the lower bound of the
+%        max part of the dynamical system implied by that epsilon value
+%
+%Natalie Wellen
+%10/10/21
 function vals = pseudo_lb(Gam, d_or_c)
     %Every other entry of Gam is the size of epsilon
     n = length(Gam);

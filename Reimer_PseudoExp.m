@@ -1,4 +1,6 @@
 %% Simulations of the Arctic Seal population MC's described in Reimer 2019
+%Natalie Wellen
+%4/16/21
 clear; clc; close all;
 %% Define the population dynamic matrices
 % error bound for convergence to asymptotic growth rate (used later)
