@@ -1,4 +1,16 @@
 %Lotka-Volterra two species model
+%
+% [J] = LK2_Jacobian(N1, N2, r1, r2, alpha12, alpha21, K1, K2)
+%input, N1, double, population of species 1
+%input, N2, double, population of species 2
+%input, r1, optional double, growth rate of species 1
+%input, r2, optional double, growth rate of species 2
+%input, alpha12, optional double, interaction parameter 1
+%input, alpha21, optional double, interaction parameter 2
+%input, K1, optional double, carrying capacity of species 1
+%input, K2, optional double, carrying capacity of species 2
+%output, J, 2 by 2 double matrix, the coefficient matrix of the dynamical
+%       system
 
 function J = LK2_Jacobian(N1, N2, r1, r2, alpha12, alpha21, K1, K2)
 
