@@ -44,7 +44,7 @@ lam_CN = max(eig(A_CN))
 iterations = 100;
 n = length(A_CN);
 perturbation = ones(n,1)/sqrt(n); 
-total_population_CN = pop_growth(eps, lam_CN, 100, ones(9,1)/sqrt(9), A_CN, 'c', 2);
+total_population_CN = pop_growth(eps, lam_CN, A_CN, 100, ones(9,1)/sqrt(9), 'c', 2);
 %title("Perturbation of norm 1")
 xlabel("time in years")
 ylabel("logarithmic scale of ||exp(tA)||")
@@ -61,7 +61,8 @@ plot(0:100, dyn_sys,'-k','DisplayName','Matrix Envelope');
 max_growth_of_A_CN = max(dyn_sys)
 hold off
 
-
+kappa_CN = 2.648872885371768;
+ub_CN = exp(1)*9*kappa_CN
 
 
 

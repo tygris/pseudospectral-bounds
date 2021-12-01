@@ -9,7 +9,7 @@
 %input, d_or_c, 'd' for discrete time or 'c' for continuous time DS
 %output, pop, matrix where each row is the population at time = index(*time
 %     step)
-%
+
 %Natalie Wellen
 %10/10/21
 function pop = pop_iteration(A, iterations, perturbation, d_or_c, time_step)

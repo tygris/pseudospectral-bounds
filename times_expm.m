@@ -1,5 +1,6 @@
 %function to calculate the solution of a linear continuous time Dynamical 
 % System (DS)
+%
 %[eA] = times_expm(A, time_step, iterations, perturbation)
 %input, A, complex matrix describing the continuous time dynamical system
 %          (DS)
@@ -18,13 +19,15 @@
 %input, iterations, integer, the number of times to perform the time step
 %          time_step*iterations = time the DS is solved until 
 %output, eA, each jj'th entry is the 2-norm of exp(A*t)
-%
+
 %Natalie Wellen
-%10/10/21
+%12/01/21
 function eA = times_expm(A, time_step, iterations, perturbation)
+    assert(nargin <= 2, "Three inputs are necessary: A, time_step, and the number of iterations.")
+    
     %if no perturbation is given assume that we are calculating the norm, or
     % matrix envelope
-    if(~exist('perturbation','var'))
+    if nargin == 3
         eA = ones(1,iterations+1);
         expmA = expm(time_step*A);
         eA(2) = norm(expmA,2);
@@ -35,7 +38,7 @@ function eA = times_expm(A, time_step, iterations, perturbation)
             last = new;
         end
     %otherwise find the trajectory of the given perturbation
-    else
+    else nargin == 4
         n = length(perturbation);
         [m1,m2] = size(A);
         if n == m2

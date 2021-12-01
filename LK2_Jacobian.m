@@ -9,7 +9,7 @@
 %input, alpha21, optional double, interaction parameter 2
 %input, K1, optional double, carrying capacity of species 1
 %input, K2, optional double, carrying capacity of species 2
-%output, J, 2 by 2 double matrix, the coefficient matrix of the dynamical
+%output, J, 2 by 2 double matrix, the Jacobian of the dynamical
 %       system
 
 function J = LK2_Jacobian(N1, N2, r1, r2, alpha12, alpha21, K1, K2)
