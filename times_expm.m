@@ -23,7 +23,7 @@
 %Natalie Wellen
 %12/01/21
 function eA = times_expm(A, time_step, iterations, perturbation)
-    assert(nargin <= 2, "Three inputs are necessary: A, time_step, and the number of iterations.")
+    assert(nargin >= 2, "Three inputs are necessary: A, time_step, and the number of iterations.")
     
     %if no perturbation is given assume that we are calculating the norm, or
     % matrix envelope
